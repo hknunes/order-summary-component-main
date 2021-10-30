@@ -38,47 +38,77 @@ body {
 }
 
 .card{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    
-    background: white;
-    max-width: 30vw;
-    height: 80vh;
-    border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background: white;
+  max-width: 30vw;
+  height: 70vh;
+  border-radius: 16px;
 
-    &__image{
-        background: url(images/illustration-hero.svg) no-repeat;
-        width: 100%;
-        height: 220px;
-        border-top-left-radius: 16px;
-        border-top-right-radius: 16px;
-        margin-bottom: 36px;
+  &__image{
+    img{
+      width: 100%;
+      height: auto;
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      margin-bottom: 32px;
     }
+  }
 
-    &__title{
-        font-size: 24px;
+  &__content{
+    width: 85%;
+  }
+
+  &__title{
+      font-size: 22px;
+      font-weight: $font-black;
+      color: $dark-blue;
+      margin-bottom: 24px;
+  }
+
+  &__text{
+      max-width: 80%;
+      margin: auto;
+      margin-bottom: 24px;
+      line-height: 1.618;
+  }
+
+  &__plan{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items:center;
+      padding: 24px;
+      background-color: $very-pale-blue;
+      max-width: 100%;
+      margin: auto;
+      margin-bottom: 24px;
+      border-radius: 8px;
+
+      &-title{
         font-weight: $font-black;
         color: $dark-blue;
-    }
+        font-size: 14px;
+        text-align: left;
+      }
 
-    &__text{
-        max-width: 80%;
-        margin: auto;
-    }
+      &-price{
+        font-size: 14px;
+        font-weight: $font-medium;
+      }
 
-    &__plan{
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        padding: 16px;
-        background-color: $very-pale-blue;
-        max-width: 75%;
-        margin: auto;
-        border-radius: 8px;
-    }
+      a{
+        font-weight: $font-black;
+        font-size: 12px;
+      }
+  }
+
+  &__buttons{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 .attribution {
@@ -88,4 +118,115 @@ body {
 
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+button,
+.btn-primary{
+  background-color: $bright-blue;
+  box-shadow: 0px 16px 18px 0px rgba(56, 41, 224, 0.2);
+	border-radius:12px;
+  border: 0;
+	color:#ffffff;
+  font-size: 14px;
+	font-weight:bold;
+	padding:16px 32px;
+	text-decoration:none;
+  margin-bottom: 16px;
+}
+
+.btn-cancel{
+  background-color: transparent;
+  box-shadow: none;
+  font-weight: $font-bold;
+  color: $desaturated-blue;
+}
+
+button.btn-primary:hover{
+  background-color: hsl(228, 45%, 44%);
+  cursor: pointer;
+}
+
+button.btn-cancel:hover{
+  cursor: pointer;
+  color:$dark-blue;
+}
+
+@media only screen and (max-width: 600px) {
+
+  body {
+    background: url(images/pattern-background-mobile.svg) $pale-blue no-repeat;
+    font-family: $font;
+    font-size: $font-size-base;
+    font-weight: $font-medium;
+    color: $desaturated-blue;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: white;
+    max-width: 90vw;
+    height: 80vh;
+    border-radius: 16px;
+
+    &__content{
+      width: 85%;
+    }
+
+    &__title{
+        font-size: 22px;
+        font-weight: $font-black;
+        color: $dark-blue;
+        margin-bottom: 20px;
+    }
+
+    &__text{
+        max-width: 80%;
+        margin: auto;
+        margin-bottom: 20px;
+    }
+
+    &__plan{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items:center;
+        padding: 16px;
+        background-color: $very-pale-blue;
+        max-width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-radius: 8px;
+
+        &-title{
+          font-weight: $font-black;
+          color: $dark-blue;
+          font-size: 14px;
+          text-align: left;
+        }
+
+        &-price{
+          font-size: 14px;
+          font-weight: $font-medium;
+        }
+
+        a{
+          font-weight: $font-black;
+          font-size: 12px;
+        }
+    }
+
+    &__buttons{
+      display: flex;
+      flex-direction: column;
+    }
+}
+
 }
